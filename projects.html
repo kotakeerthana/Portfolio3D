@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
+            color: #e7e7e7;
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #7f43a7;
+        }
+
+        .navbar a.active {
+            color: #7f43a7;
+            font-weight: 600;
+        }
+
+        /* Back Button */
+        .back-btn {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(127, 67, 167, 0.2);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1001;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(127, 67, 167, 0.4);
+            transform: translateX(-3px);
+        }
+
+        /* Projects Container */
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .projects-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 0 1rem;
+        }
+
+        .projects-header h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #7f43a7, #5300a0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .projects-header p {
+            color: #a7a7a7;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .project-card {
+            background: rgba(30, 30, 30, 0.7);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 768px) {
+            .project-card {
+                flex-direction: row;
+                min-height: 350px;
+            }
+            
+
+            .project-content {
+                width: 55%;
+            }
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .project-content h2 {
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            margin-bottom: 0.8rem;
+            color: #fff;
+        }
+
+        .project-description {
+            color: #a7a7a7;
+            margin-bottom: 1.2rem;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+
+        .project-features {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-features h3 {
+            font-size: clamp(1rem, 3vw, 1.1rem);
+            margin-bottom: 0.6rem;
+            color: #7f43a7;
+        }
+
+        .project-features ul {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .project-features li {
+            margin-bottom: 0.4rem;
+            position: relative;
+            font-size: clamp(0.85rem, 3vw, 0.95rem);
+            line-height: 1.5;
+        }
+
+        .project-features li::before {
+            content: "▹";
+            position: absolute;
+            left: -1rem;
+            color: #7f43a7;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(127, 67, 167, 0.2);
+            color: #d0a5ff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: clamp(0.75rem, 3vw, 0.85rem);
+            border: 1px solid rgba(127, 67, 167, 0.3);
+            white-space: nowrap;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: clamp(0.85rem, 3vw, 1rem);
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+        .code-link {
+            background: transparent;
+            color: #7f43a7;
+            border: 1px solid #7f43a7;
+        }
+
+        .code-link:hover {
+            background: rgba(127, 67, 167, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 767px) {
+            .projects-container {
+                padding: 1.5rem 1rem;
+            }
+            
+            .project-content {
+                padding: 1.2rem;
+            }
+            
+            .project-links {
+                flex-direction: column;
+            }
+            
+            .project-link {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                gap: 1rem;
+                padding: 0.8rem;
+                flex-wrap: wrap;
+            }
+            
+            .back-btn {
+                top: 0.5rem;
+                left: 0.5rem;
+                width: 35px;
+                height: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="index.html" class="back-btn" aria-label="Back to main page">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#education">Education</a>
+        <a href="index.html#experience">Experience</a>  
+        <a href="index.html#projects" class="active">Projects</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#resume">Resume</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <!-- Projects Container -->
+    <div class="projects-container">
+        <header class="projects-header">
+            <h1>My Projects</h1>
+            <p>Here's a collection of my recent work with details about each project</p>
+        </header>
+        <div class="projects-grid" id="projects-container">
+        </div>
+    </div>
+
+    <script>
+        const projects = [
+            {
+                title: "YouTube Video Summarizer",
+                description: "A notebook-style Streamlit web app that allows users to input a YouTube URL and receive an AI-generated transcript summary. Users can generate TL;DRs, bullet points, key takeaways, and ask contextual questions about the video content.",
+                features: [
+                    "Fetches transcript from YouTube",
+                    "Generates summaries (TL;DR, bullet points, translation)",
+                    "Gemini-powered contextual Q&A",
+                    "Download options (TXT, PDF, DOCX)"
+                ],
+                techStack: ["Python", "Google Gemini 1.5 Pro", "Streamlit", "YouTube Transcript API", "FPDF, python-docx"],
+                githubUrl: "https://github.com/kotakeerthana/YoutubeVideoSummarizer.git"
+            },
+            {
+                title: "Classifying ALzheimer's Disease",
+                description: "A machine learning-based diagnostic tool for early detection of Alzheimer’s using brain MRI scans. The study classifies patients into stages (Non-demented, Very Mild, Mild, Moderate) using CNNs and ensemble models.",
+                features: [
+                    "Multi-model training and performance benchmarking",
+                    "Class imbalance handling with stratified splitting and weighted loss",
+                    "Ensemble model comparison",
+                    "Performance metrics: Accuracy, Precision, Recall, F1-Score, Confusion Matrix"
+                ],
+                techStack: ["Scikit-learn", "XGBoost", "Random Forest", "AdaBoost","KNN","ResNet50","EfficientNetB0","OASIS Brain MRI Dataset (Kaggle)"],              
+                githubUrl: "https://github.com/kotakeerthana/ClassifyingAlzheimerDisease.git"
+            },
+            {
+                title: "Crime Data Analysis & Perpetrator Prediction",
+                description: "A crime analysis system that identifies trends and predicts potential perpetrator attributes (age, sex, relationship with the victim) based on historical crime data.",
+                features: [
+                    "Exploratory analysis of unsolved crimes by year, weapon, and month",
+                    "Predictive modeling of perpetrator identity",
+                    "Focus on both descriptive and predictive analytics",
+                    "GUI and visualization via Python libraries"
+                ],
+                techStack: ["Python", "Multilinear Regression", "KNN", "ANN"," San Francisco Homicide Dataset (1981–2014)s"],
+                githubUrl: "https://github.com/kotakeerthana/CrimeDataAnalysis.git"
+            },
+            {
+                title: "Market Data Analysis",
+                description: "A business-focused project analyzing market performance and consumer behavior to evaluate project competitiveness. Emphasizes demand forecasting, market segmentation, and trend-based decision-making.",
+                features: [
+                    "Market demand and competitor trend analysis",
+                    "Data visualization using Python plotting libraries",
+                    "Consumer behavior and segmentation modeling",
+                    "Literature-backed methodology using cluster analysis and data mining"
+                ],
+                techStack: ["Python", "Pandas", "NumPy", "SciPy", "Matplotlib", "Mlpy"],
+                githubUrl: "https://github.com/kotakeerthana/MarketAnalysisTimeSeries.git"
+            },
+            {
+                title: "LIVER CIRRHOSIS DETECTION",
+                description: "Compares multiple classification algorithms using Alteryx workflows for visual and performance-based model evaluation.",
+                features: [
+                "Model training using Decision Tree, Random Forest, Logistic Regression",
+                "Visual comparison using ROC curves",
+                "Snapshot-based workflow documentation",
+                "Performance metrics for interpretability"
+                ],
+                techStack: ["Alteryx", "Machine Learning", "ROC Analysis"],
+            },
+            {
+                title: "GrowthLink – Academic Networking Platform",
+                description: "A real-time academic platform connecting students, mentors, and professionals with tools for mentorship, event management, and career development.",
+                features: [
+                    "Structured mentorship program with mentor-mentee matching",
+                    "Centralized academic event platform with registration and calendar integration",
+                    "Real-time communication via WebSocket-based chat",
+                    "Career development tools including resume tips and interview prep",
+                    "Role-based dashboards for students, organizers, mentors, and employers"
+                ],
+                techStack: [
+                    "Next.js 14", 
+                    "TailwindCSS", 
+                    "Shadcn/ui", 
+                    "PHP", 
+                    "WebSocket", 
+                    "MySQL", 
+                    "Prisma ORM", 
+                    "JWT Authentication"
+                ],
+                githubUrl: "https://github.com/kotakeerthana/AcademicNetworkingSite.git"
+                },
+            {
+                title: "Portfolio",
+                description: "A responsive portfolio website with interactive elements, smooth animations, and a clean design to showcase my skills and projects.",
+                features: [
+                    "Responsive grid layout for projects and skills",
+                    "Interactive education cards with GPA visualization",
+                    "Animated skills section with Devicon integration",
+                    "Smooth scroll-triggered animations",
+                    "Dark theme with purple accent colors",
+                    "Mobile-optimized navigation"
+                ],
+                techStack: [
+                    "HTML5",
+                    "CSS3",
+                    "Spline",
+                    "JavaScript",
+                    "Devicon (for skill icons)",
+                    "CSS Grid/Flexbox",
+                    "IntersectionObserver API",
+                    "Responsive Design"
+                ],
+                githubUrl: "https://github.com/yourusername/my-portfolio",
+            },      
+        ];
+
+        function renderProjects() {
+            const container = document.getElementById('projects-container');
+            
+            projects.forEach(project => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'project-card';
+                
+                projectCard.innerHTML = `
+                    <div class="project-content">
+                        <h2>${project.title}</h2>
+                        <p class="project-description">${project.description}</p>
+                        
+                        <div class="project-features">
+                            <h3>Key Features:</h3>
+                            <ul>
+                                ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+                            </ul>
+                        </div>
+                        
+                        <div class="tech-stack">
+                            ${project.techStack.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                        </div>
+                        
+                        <div class="project-links">
+                            ${project.demoUrl ? 
+                                `<a href="${project.demoUrl}" class="project-link demo-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>` : ''
+                            }
+                            <a href="${project.githubUrl}" class="project-link code-link" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i> GitHub Repo
+                            </a>
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(projectCard);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProjects();
+            
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-10px)';
+                    card.style.boxShadow = '0 15px 40px rgba(83, 0, 160, 0.3)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                    card.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
