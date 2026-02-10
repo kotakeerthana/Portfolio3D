@@ -3,6 +3,503 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Portfolio</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script src='script.js'></script>
+</head>
+<body>
+    <img class ="image-gradient"src="gradient.png" alt="gradient">
+    <div class="layer-blur"></div>
+    <div class="container">
+            <nav class="navbar">
+                <a href="#home">Home</a>
+                <a href="#about">AboutMe</a>   
+                <a href="#education">Education</a>
+                <a href="#experience">Experience</a>  
+                <a href="#projects">Projects</a>  
+                <a href="#skills">Skills</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#recommendations">Recommendations</a>  
+                <a href="#resume">Resume</a>
+                <a href="#contact">Contact</a>
+            </nav>
+<section class="home" id="home">
+        <main>
+            <div class="content">
+                <div class="tag-box">
+                  <a href="#about" class="tag">WELCOME</a>
+                </div>
+                <p class = "description">Explore my work, projects, and what I’ve been building lately</p>
+            </div>
+        </main>
+        <spline-viewer class= "robot3d" url="https://prod.spline.design/z4LzBFsj1c-jKUCU/scene.splinecode"></spline-viewer>
+    </div>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js">
+    </script>
+  </section>
+<!-- About Me Section -->
+<section class="about" id="about">
+  <div class="about-container">
+      <div class="about-content">
+          <!-- Profile Image -->
+          <div class="profile-image-wrapper">
+              <img src="img/Me3.JPG" alt="My Photo" class="profile-pic">
+          </div>
+          
+          <!-- Text Content -->
+          <div class="about-text">
+              <h2>About Me</h2>
+              <p class="bio-text">
+                Hi, I'm <span class="highlight">KEERTHANA KOTA</span>, a Computer Science graduate at the University of Texas at Arlington, with a strong interest in AI, software development, and solving real-world problems through tech. I'm passionate about building smart, efficient systems and constantly learning new things to improve how I build and think.              
+                I love solving problems that matter, whether it's through machine learning, clean code, or thoughtful design. I’ve worked on accessible enterprise apps, machine learning models for healthcare, and data-driven insights for business optimization.
+                When I'm not coding, you'll probably find me curled up with a novel, cooking up something new, or catching up on my favorite TV shows. I believe great ideas often spark when work and play are in balance and I bring that mindset into everything I build.              
+              </p>
+              <div class="interests">
+                  <h3>My Interests</h3>
+                  <div class="interest-bubbles">
+                      <span class="bubble">AI & Machine Learning</span>
+                      <span class="bubble">Data Analysis & Visualization</span>
+                      <span class="bubble">Full-Stack Development</span>
+                      <span class="bubble">Backend Development & Databases</span>
+                  </div>
+              </div>
+              
+              <div class="action-buttons">
+                  <a href="#contact" class="btn-contact">Contact Me</a>
+                  <a href="#resume" class="btn-resume">View Resume</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- Education Section -->
+<section class="education-section" id="education">
+  <h2>Education</h2>
+  <div class="education-cards">
+    <!-- Card 1 -->
+    <div class="education-card">
+      <div class="card-content">
+        <div class="school-info">
+          <h3>University of Texas at Arlington</h3>
+          <p class="degree">Master of Science in Computer Science</p>
+          <p class="dates">2023 - 2025</p>
+        </div>
+        <div class="gpa-display">
+          <div class="progress-ring">
+            <svg class="progress-ring__svg" viewBox="0 0 120 120">
+              <circle class="progress-ring__circle" stroke="#7f43a7" stroke-width="6" fill="transparent" r="52" cx="60" cy="60"/>
+              <circle class="progress-ring__circle progress-ring__circle--progress" stroke="#5300a0" stroke-width="6" fill="transparent" r="52" cx="60" cy="60" stroke-dasharray="326.56" stroke-dashoffset="0"/>
+            </svg>
+            <span class="progress-text">GPA: 3.7/4.0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="education-card">
+      <div class="card-content">
+        <div class="school-info">
+          <h3>Malla Reddy Engineering College</h3>
+          <p class="degree">Bachelor of Technology in Computer Science and Engineering</p>
+          <p class="dates">2017 - 2021</p>
+        </div>
+        <div class="gpa-display">
+          <div class="progress-ring">
+            <svg class="progress-ring__svg" viewBox="0 0 120 120">
+              <circle class="progress-ring__circle" stroke="#7f43a7" stroke-width="6" fill="transparent" r="52" cx="60" cy="60"/>
+              <circle class="progress-ring__circle progress-ring__circle--progress" stroke="#5300a0" stroke-width="6" fill="transparent" r="52" cx="60" cy="60" stroke-dasharray="326.56" stroke-dashoffset="65.31"/>
+            </svg>
+            <span class="progress-text">GPA: 9.1/10</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section class="experience-section" id="experience">
+  <div class="section-header">
+      <h2>Work <span>Experience</span></h2>
+      <div class="section-divider"></div>
+  </div>
+  
+  <div class="timeline">
+          <!-- Experience pre 1 -->
+      <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">&nbsp; 2025 - Present</div>
+          <div class="timeline-content">
+              <h3>AI Software Engineer (Volunteer)</h3>
+              <h4>University of Texas at Arlington</h4>
+              <ul>
+                  <li>Built and optimized a multilingual AI healthcare application supporting 8 languages using Python, Streamlit, and i18n frameworks</li>
+                  <li>Enhanced a rule-based reasoning engine with structured logic to identify high-risk scenarios and improve decision accuracy</li>
+                  <li>Developed modular backend components using Pydantic, Jinja2, and SQLite for structured data parsing and language-aware report generation</li>
+                  <li>Implemented translation and validation pipelines for LLM outputs (Gemini and OpenAI), ensuring safe, JSON-controlled responses across languages</li> 
+              </ul>
+              <div class="tech-tags">
+                  <span>Research Assistance</span>
+                  <span>Communication & Soft Skills</span>
+                  <span>Ethical Practices in CS</span>
+              </div>
+          </div>
+      </div>
+
+      <!-- Experience 1 -->
+      <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">&nbsp; 2023 - 2025</div>
+          <div class="timeline-content">
+              <h3>Graduate Teaching Assistant</h3>
+              <h4>University of Texas at Arlington</h4>
+              <ul>
+                  <li>Conducted research and contributed to the development of class materials</li>
+                  <li>Supported course management by grading assignments, providing feedback, and assisting with lecture preparation</li>
+                  <li>Facilitated interactive sessions to boost student engagement</li>
+              </ul>
+              <div class="tech-tags">
+                  <span>Research Assistance</span>
+                  <span>Communication & Soft Skills</span>
+                  <span>Ethical Practices in CS</span>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Experience 2 -->
+      <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">&nbsp; 2021 - 2023</div>
+          <div class="timeline-content">
+              <h3>Software Engineer</h3>
+              <h4>Accenture </h4>
+              <ul>
+                  <li>Led SQL migration projects for 10K+ enterprise records, optimizing query performance and ensuring data integrity across financial modules</li>
+                  <li>Resolved SAPCONS and double-invoice discrepancies, improving data accuracy by 30%</li>
+                  <li>Built and deployed automated alert systems that tracked transaction anomalies, cutting incident response time by 50%</li>
+                  <li>Diagnosed and fixed critical backend and UI bugs, enhancing application stability and reducing crash frequency by 40%</li>
+                  <li>Implemented WCAG 2.1 accessibility standards and contributed to CI/CD automation, improving usability and deployment efficiency across systems</li>
+              </ul>
+              <div class="tech-tags">
+                  <span>SQL Server</span>
+                  <span>Software Debugging</span>
+                  <span>Web Accessibility</span>
+                  <span >Database Optimization </span>
+                  <span>Bug Fixing</span>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Experience 3 -->
+      <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">&nbsp; 2019 - 2021</div>
+          <div class="timeline-content">
+              <h3>Software Engineering Intern</h3>
+              <h4>NSLHub (Brane Enterprise)</h4>
+              <ul>
+                  <li>Supported real-time data transfer optimization with WebSockets, significantly improving response latency across distributed microservices</li>
+                  <li>Enhanced backend API testing and documentation workflows using Swagger and Postman, increasing microservice test coverage</li>
+              </ul>
+              <div class="tech-tags">
+                  <span>Postman</span>
+                  <span>Swagger</span>
+                  <span>Software Testing</span>
+                  <span>Git</span>
+                  <span>Team Collaboration</span>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section class="projects" id="projects">
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-grid">
+    <!-- Project Card 1 -->
+    <div class="project-card">
+      <div class="card-bg-grid"></div>
+      <div class="card-content">
+        <h3>Alzheimer’s Disease Classification</h3>
+        <p>A machine learning-based diagnostic tool for early detection of Alzheimer’s using brain MRI scans. The study classifies patients into stages (Non-demented, Very Mild, Mild, Moderate) using CNNs and ensemble models.
+        </p>
+        <div class="tech-tags">
+          <span>Scikit-learn</span>
+          <span>ML Models</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Project Card 2 -->
+    <div class="project-card">
+      <div class="card-bg-grid"></div>
+      <div class="card-content">
+        <h3>YouTube Video Summarizer</h3>
+        <p>A notebook-style Streamlit web app that allows users to input a YouTube URL and receive an AI-generated transcript summary. Users can generate TL;DRs, bullet points, key takeaways, and ask contextual questions about the video content.
+        </p>
+        <div class="tech-tags">
+          <span>Python</span>
+          <span>Streamlit </span>
+          <span>Google Gemini 1.5 Pro</span>
+          <span>YouTube Transcript API</span>
+        </div>
+      </div>
+    </div>
+          <!-- Project Card 3 -->
+          <div class="project-card">
+            <div class="card-bg-grid"></div>
+            <div class="card-content">
+              <h3>  Crime Data Analysis & Perpetrator Prediction</h3>
+              <p>A crime analysis system that identifies trends and predicts potential perpetrator attributes (age, sex, relationship with the victim) based on historical crime data.</p>
+              <div class="tech-tags">
+                <span>Python</span>
+                <span>Jupyter Notebook </span>
+              </div>
+            </div>
+          </div>
+    
+  </div>
+
+  <div class="see-more-container">
+    <div class="tag-box">
+      <div class="tag" onclick="window.location='projects.html'">See More Projects</div>
+    </div>
+  </div>
+</section>
+<!-- Skills Section -->
+<section class="skills" id="skills">
+  <div class="section-title"><h2>Skills</h2></div>
+  <div class="skills-container">
+      <div class="skills-grid">
+          <!-- Frontend Skills -->
+          <div class="skill-category">
+      
+              <div class="skill-items">
+                  <div class="skill-item" data-skill="C">
+                      <i class="devicon-c-plain colored"></i>
+                      <span>C</span>
+                  </div>
+                  <div class="skill-item" data-skill="C++">
+                    <i class="devicon-cplusplus-plain colored"></i>
+                    <span>C++</span>
+                </div>
+                <div class="skill-item" data-skill="C#">
+                  <i class="devicon-csharp-plain colored"></i>
+                  <span>C#</span>
+                </div>
+                  <div class="skill-item" data-skill="HTML5">
+                      <i class="devicon-html5-plain colored"></i>
+                      <span>HTML5</span>
+                  </div>
+                  <div class="skill-item" data-skill="CSS3">
+                      <i class="devicon-css3-plain colored"></i>
+                      <span>CSS3</span>
+                  </div>
+                  <div class="skill-item" data-skill="JavaScript">
+                      <i class="devicon-javascript-plain colored"></i>
+                      <span>JavaScript</span>
+                  </div>
+                  <div class="skill-item" data-skill="React">
+                      <i class="devicon-react-original colored"></i>
+                      <span>React</span>
+                  </div>
+
+                  <div class="skill-item" data-skill="Node.js">
+                      <i class="devicon-nodejs-plain colored"></i>
+                      <span>Node.js</span>
+                  </div>
+                  <div class="skill-item" data-skill="Python">
+                      <i class="devicon-python-plain colored"></i>
+                      <span>Python</span>
+                  </div>
+                  <div class="skill-item" data-skill="Java">
+                      <i class="devicon-java-plain colored"></i>
+                      <span>Java</span>
+                  </div>
+                  <div class="skill-item" data-skill="Spring">
+                      <i class="devicon-spring-plain colored"></i>
+                      <span>Spring</span>
+                  </div>
+                  <div class="skill-item" data-skill="MongoDB">
+                    <i class="devicon-mongodb-plain colored"></i>
+                    <span>MongoDB</span>
+                </div>
+                <div class="skill-item" data-skill="MySQL">
+                    <i class="devicon-mysql-plain colored"></i>
+                    <span>MySQL</span>
+                </div>
+                <div class="skill-item" data-skill="Git">
+                    <i class="devicon-git-plain colored"></i>
+                    <span>Git</span>
+                </div>
+                <div class="skill-item" data-skill="Postman">
+                  <i class="devicon-postman-plain colored"></i>
+                  <span>Postman</span>
+              </div>
+              <div class="skill-item" data-skill="Swagger">
+                <i class="devicon-swagger-plain colored"></i>
+                <span>Swagger</span>
+            </div>
+            <div class="skill-item" data-skill="Eclipse">
+              <i class="devicon-eclipse-plain colored"></i>
+              <span>Eclipse</span>
+            </div>  
+            <div class="skill-item" data-skill="VIsual Studio">
+            <i class="devicon-visualstudio-plain colored"></i>
+            <span>Swagger</span>
+            </div>  
+            <div class="skill-item" data-skill="VSCode">
+               <i class="devicon-vscode-plain colored"></i>
+                <span>VSCode</span>
+            </div>
+            <div class="skill-item" data-skill="Jupyter">
+                <i class="devicon-jupyter-plain colored"></i>
+                <span>Jupyter</span>
+            </div>
+
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section class="certifications" id="certifications">
+  <div class="certifications-container">
+    <h2>Certifications</h2>
+    <div class="cert-card">
+      <iframe src="files/Coursera.pdf" class="cert-pdf" title="Google Certificate"></iframe>
+      <div class="cert-details">
+        <h3>Architecting with Google Compute Engine Specialization</h3>
+        <p>Google Cloud</p>
+        <div class="cert-links">
+          <a href="files/Coursera.pdf" download class="cert-download-btn">
+            <i class="fas fa-file-download"></i> Download PDF
+          </a>
+          <a href="https://www.coursera.org/account/accomplishments/specialization/RCBYA2TPQ9WH" target="_blank" class="cert-verify-btn">
+            <i class="fas fa-external-link-alt"></i> Verify Certificate
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <iframe src="files/AzureFundamentals.pdf" class="cert-pdf" title="Google Certificate"></iframe>
+      <div class="cert-details">
+        <h3>Microsoft Certified: Azure Fundamentals</h3>
+        <p>Microsoft</p>
+        <div class="cert-links">
+          <a href="files/AzureFundamentals.pdf" download class="cert-download-btn">
+            <i class="fas fa-file-download"></i> Download PDF
+          </a>
+          <a href="https://learn.microsoft.com/en-us/users/kotakeerthana-7849/credentials/certification/azure-fundamentals" target="_blank" class="cert-verify-btn">
+            <i class="fas fa-external-link-alt"></i> Verify Certificate
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <iframe src="files/PowerPlatform.pdf" class="cert-pdf" title="Google Certificate"></iframe>
+      <div class="cert-details">
+        <h3>Microsoft Certified: Power Platform Fundamentals</h3>
+        <p>Microsoft</p>
+        <div class="cert-links">
+          <a href="files/PowerPlatform.pdf" download class="cert-download-btn">
+            <i class="fas fa-file-download"></i> Download PDF
+          </a>
+          <a href="https://learn.microsoft.com/en-us/users/kotakeerthana-7849/credentials/certification/power-platform-fundamentals" target="_blank" class="cert-verify-btn">
+            <i class="fas fa-external-link-alt"></i> Verify Certificate
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <iframe src="files/SecurityComplianceandIdentityFundamentals.pdf" class="cert-pdf" title="Google Certificate"></iframe>
+      <div class="cert-details">
+        <h3>Microsoft Certified: Security, Compliance, and Identity Fundamentals</h3>
+        <p>Microsoft</p>
+        <div class="cert-links">
+          <a href="files/SecurityComplianceandIdentityFundamentals.pdf" download class="cert-download-btn">
+            <i class="fas fa-file-download"></i> Download PDF
+          </a>
+          <a href="https://learn.microsoft.com/en-us/users/kotakeerthana-7849/credentials/certification/security-compliance-and-identity-fundamentals?tab=credentials-tab" target="_blank" class="cert-verify-btn">
+            <i class="fas fa-external-link-alt"></i> Verify Certificate
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Recommendations Section -->
+<section class="recommendations" id="recommendations">
+  <div class="recommendations-container">
+    <h2>Recommendations</h2>
+    <div class="recommendation-card">
+      <blockquote>
+        "Kota has proven to be indispensable in both preparing material for and operating this course. She is adept at researching topics, providing relevant historical and current examples, and reviewing proposed classroom activities and materials.  
+        <br><br>
+        I consider her to be among my best Teaching Assistants of the past decade, and I have no doubt she will excel at all future opportunities. I can recommend Kota Keerthana with absolutely no reservations."
+          </blockquote>
+      <p class="recommender">— Mr. George F Rice,Adjunct Professor at UTA</p>
+     <br><a href="files/Recommendation.pdf" download class="cert-download-btn">
+        <i class="fas fa-file-download"></i> Download Recommendation
+      </a>
+    </div>
+  </div>
+</section>
+
+  <!-- Resume Section -->
+  <section class="resume-download" id="resume">
+    <div class="resume-container">
+        <h2>Download My Resume</h2>
+        <p>My professional resume in PDF format</p>     
+        <a href="files/Resume.pdf" download class="resume-download-btn">
+            <i class="fas fa-file-pdf"></i>
+            Download Resume PDF
+        </a>
+    </div>
+</section>
+
+  <!-- Contact Section -->
+  <section class="simple-contact" id="contact">
+    <div class="contact-container">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out for opportunities or just to say hi!</p>
+        
+        <div class="contact-methods">
+            <a href="mailto:your.email@example.com" class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>kotakeerthana210@gmail.com</span>
+          </a>
+            <a href="tel:+1234567890" class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+1(682)373-8827</span>
+            </a>
+            
+            <a href="http://www.linkedin.com/in/kotakeerthana" target="_blank" class="contact-item">
+                <i class="fab fa-linkedin-in"></i>
+                <span>LinkedIn Profile</span>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- Simple Minimal Footer -->
+<footer class="minimal-footer">
+  <div class="footer-line"></div>
+</footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
